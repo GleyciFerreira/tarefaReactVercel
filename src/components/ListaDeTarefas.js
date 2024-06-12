@@ -31,7 +31,7 @@ function ListaDeTarefas() {
             const tasksFromAPI = await TaskAPI.readTasks(userId);
             setTarefas(tasksFromAPI);
         } catch (error) {
-            console.error('Erro ao buscar tarefas:', error);
+            console.error('Erro ao buscar produtos:', error);
         }
         };
 
@@ -49,7 +49,7 @@ function ListaDeTarefas() {
           setMostrarFormulario(false);
           //setNewTaskTitle(''); // Limpa o campo de entrada após a adição da tarefa
         } catch (error) {
-          console.error('Erro ao adicionar tarefa:', error);
+          console.error('Erro ao adicionar produto:', error);
         }
       };
 
@@ -60,7 +60,7 @@ function ListaDeTarefas() {
           const updatedTasks = tarefas.filter(task => task.id !== taskId);
           setTarefas(updatedTasks);
         } catch (error) {
-          console.error('Erro ao excluir tarefa:', error);
+          console.error('Erro ao excluir produto:', error);
         }
       };
 
@@ -74,7 +74,7 @@ function ListaDeTarefas() {
                         type="text"
                         value={novaTarefa}
                         onChange={(e) => setNovaTarefa(e.target.value)}
-                        placeholder="Digite uma nova tarefa"
+                        placeholder="Digite o nome de um produto"
                     />
                     <button onClick={adicionarTarefa}>Adicionar</button>
                 </div>
